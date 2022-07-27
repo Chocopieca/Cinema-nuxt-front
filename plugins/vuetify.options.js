@@ -14,7 +14,7 @@ export default {
   icons: {},
   lang: {},
   theme: {
-    dark: false,
+    dark: true,
     options: { customProperties: true },
     themes: {
       light: {

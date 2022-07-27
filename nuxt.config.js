@@ -13,7 +13,10 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com', },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com', crossOrigin: true },
+      { ref: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap' },
     ]
   },
 
@@ -24,10 +27,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@plugins/services',
+    { src: '@plugins/axios.js' },
     { src: '@plugins/injectedComponents.js' },
     { src: '@plugins/baseScripts.js' },
-    { src: '@plugins/vue-slick-carousel.js' },
-    { src: '@plugins/aos.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -55,6 +58,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxt/image',
     'nuxt-breakpoints',
     'nuxt-ssr-cache',
   ],
@@ -89,7 +93,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL:'https://cinema-api-test.y-media.io/v1',
+    baseURL: process.env.MOVIE_API_URL,
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -104,7 +108,7 @@ export default {
   },
 
   loading: {
-    color: '#75F7A4',
+    color: '#c18a2c',
     height: '5px',
   },
 }
