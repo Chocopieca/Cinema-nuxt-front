@@ -9,13 +9,15 @@ $color-pack: false;
 @import '~vuetify/src/styles/main.sass';
 
 html body {
-  font-family: Quicksand, sans-serif;
+  //background: black url(https://dribbble.com/shots/4283954-Cinema-Pattern);
+  background: black url(https://t3.ftcdn.net/jpg/01/05/96/56/360_F_105965602_caJCVpUKcDI9PqXFXN4LjhhjXBp8NKXp.jpg);
+  background-size: 20%;
+  font-family: Mulish, sans-serif;
   color: white;
-  overflow-x: hidden;
 }
 
 html, body, .wrapper, #__nuxt, #__layout {
-  //height: 100%;
+  height: 100%;
 }
 
 a {
