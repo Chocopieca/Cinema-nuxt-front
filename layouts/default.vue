@@ -1,33 +1,39 @@
 <template>
-  <div>
+  <v-app class="wrapper">
+    <AppHeader />
     <Nuxt />
-  </div>
+    <AppFooter />
+  </v-app>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+  name: 'DefaultLayout',
+  components: {
+    AppHeader: () => import('../components/app-header'),
+    AppFooter: () => import('../components/app-footer'),
+  },
+  async serverPrefetch({ $store }) {
+    try {
+      await $store.dispatch('movies/getAllMovies');
+    } catch (e) {
+      console.log('Error ', e)
     }
   }
 }
 </script>
+<style module>
+.test {
+  background: black;
+}
+</style>
+
+<style scoped lang="scss">
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background: transparent;
+}
+</style>

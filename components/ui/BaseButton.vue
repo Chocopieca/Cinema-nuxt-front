@@ -69,7 +69,7 @@ export default {
 <style scoped lang="scss">
 .button {
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 5px;
   white-space: nowrap;
   width: 100%;
 
@@ -101,8 +101,8 @@ export default {
   }
 
   &-border {
-    background: linear-gradient(90deg, rgba(137, 94, 242, 0.05) 7%, rgba(25, 251, 155, 0.05) 89%);
-    border: 1px solid #19FB9B;
+    background: linear-gradient(135deg, #c18a2c30 7%, #c18a2c90 89%);
+    border: 1px solid #ffa300;
   }
 
   &-disabled {

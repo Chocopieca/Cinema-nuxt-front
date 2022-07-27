@@ -28,7 +28,7 @@ export default {
     },
     src: {
       type: String,
-      default: 'https://commons.wikimedia.org/wiki/File:Android_O_Preview_Logo.png'
+      default: 'https://d3rg18dos0rgue.cloudfront.net/wp-content/uploads/sites/9/2022/05/RoxyCinema-logo%403x.png'
     }
   },
   computed: {

@@ -1,6 +1,6 @@
 <template>
   <nav :class="getClasses" class="links">
-    <nuxt-link v-for="(link, index) of navLink" :key="index" :to="link.to">
+    <nuxt-link v-for="(link, index) of navLink" :key="index" :to="link.to" class="mr-5">
       {{ link.title }}
     </nuxt-link>
   </nav>
