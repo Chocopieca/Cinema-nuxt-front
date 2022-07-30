@@ -164,6 +164,7 @@ export default {
       loadMoviePlaces: 'movies/loadMoviePlaces',
       BookMovie: 'movies/BookMovie',
       hideModal: 'modal/hideModal',
+      showModal: 'modal/showModal',
     }),
     resetModal() {
       this.selectedDate = null;
@@ -174,15 +175,22 @@ export default {
       this.hideModal();
     },
     async selectSession() {
-      const payload = {
-        movieId: this.movieItem.id,
+      const data = {
+        movie_id: this.movieItem.id,
         row: this.selectedRow,
         seat: this.selectedSeat,
         showdate: this.selectedDate,
         daytime: this.selectedTime
       }
-      await this.BookMovie(payload);
-      console.log('bookedMovies', this.bookedMovies)
+      await this.BookMovie(data); // don't work !!!!!!
+
+      const payload = {
+        type: 'SuccessesModal',
+        options: {
+          id: this.movieItem.id,
+        }
+      }
+      this.showModal(payload)
     }
   },
 }

@@ -32,6 +32,10 @@ export default {
           title: 'All movies',
           to: '/'
         },
+        {
+          title: 'My booking',
+          to: '/my_movies'
+        },
       ]
     }
   }

@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-::v-deep.movies-title {
+.movies-title {
   background: #373737;
   border: 2px solid white;
   box-shadow: inset #000000 0 0 20px 3px;
