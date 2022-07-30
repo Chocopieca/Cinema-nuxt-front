@@ -30,13 +30,6 @@ export default {
       default: false,
     }
   },
-  methods: {
-    buttonClick() {
-      if(!this.disabled) {
-        this.$emit('click')
-      }
-    }
-  },
   computed: {
     getButtonColor() {
       switch (this.buttonColor) {
@@ -44,6 +37,8 @@ export default {
           return 'button-transparent';
         case 'border':
           return 'button-border';
+        case 'chips':
+          return 'button-chips';
         default:
           return 'button-default';
       }
@@ -52,6 +47,10 @@ export default {
       switch (this.buttonSize) {
         case 'small':
           return 'button-small size14-weight700';
+        case 'large':
+          return 'button-large size14-weight700';
+        case 'chip':
+          return 'button-chip size14-weight700';
         default:
           return 'button-big size16-weight700';
       }
@@ -62,6 +61,13 @@ export default {
       classString += ' ' + this.getButtonSize;
       return classString;
     }
+  },
+  methods: {
+    buttonClick() {
+      if(!this.disabled) {
+        this.$emit('click')
+      }
+    }
   }
 }
 </script>
@@ -71,7 +77,11 @@ export default {
   cursor: pointer;
   border-radius: 5px;
   white-space: nowrap;
-  width: 100%;
+
+  &-large {
+    width: 100%;
+    height: 50px;
+  }
 
   &-big {
     width: 436px;
@@ -80,6 +90,10 @@ export default {
 
   &-small {
     width: 172px;
+    height: 40px;
+  }
+
+  &-chip {
     height: 40px;
   }
 
@@ -102,7 +116,18 @@ export default {
 
   &-border {
     background: linear-gradient(135deg, #c18a2c30 7%, #c18a2c90 89%);
+    box-shadow:  #000000 0 0 20px 3px;
     border: 1px solid #ffa300;
+  }
+
+  &-chips {
+    display: inline-block;
+    border: 1px solid #c18a2c;
+    border-radius: 20px;
+    padding: 5px 10px;
+    background: black;
+    cursor: pointer;
+    margin-bottom: 20px;
   }
 
   &-disabled {

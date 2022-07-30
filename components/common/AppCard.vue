@@ -10,7 +10,7 @@
         format: 'webp'
       })"
       contain
-      max-height="550"
+      height="230"
       class="cursor-pointer"
       @click="$router.push(`/movie/${item.id}`)"
     />
@@ -19,15 +19,17 @@
       class="text-center mb-3 cursor-pointer"
       @click="$router.push(`/movie/${item.id}`)"
     >{{ item.name }}</h3>
-    <BaseButton button-color="border">WATCH</BaseButton>
+    <BaseButton button-color="border" @click="setOrder">WATCH</BaseButton>
   </div>
 </template>
 
 <script>
+import {mapActions} from "vuex";
+
 export default {
   name: "AppCard",
   components: {
-    BaseButton: () => import('../../components/ui/BaseButton')
+    BaseButton: () => import('~~/components/ui/BaseButton')
   },
   props: {
     item: {
@@ -35,6 +37,20 @@ export default {
       default: () => {}
     }
   },
+  methods: {
+    ...mapActions({
+      openDialog: 'modal/showModal',
+    }),
+    setOrder() {
+      const payload = {
+        type: 'OrderModal',
+        options: {
+          movie: this.item,
+        }
+      }
+      this.openDialog(payload)
+    }
+  }
 }
 </script>
 
@@ -42,6 +58,7 @@ export default {
 .movie-card {
   background: #4d4d4d;
   border: 1px solid white;
+  box-shadow: inset #000000 0 0 20px 3px;
   height: 414px;
 
   h3 {

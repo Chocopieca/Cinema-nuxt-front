@@ -1,14 +1,16 @@
 <template>
-  <v-container fluid class="main-dark-gray pa-0 pt-2">
+  <v-container fluid class="header main-dark-gray">
     <v-container class="position-relative h-100 pa-0">
       <header class="d-flex justify-space-between align-center pa-2">
-        <Logo size="middle"/>
+        <nuxt-link to="/">
+          <Logo size="middle"/>
+        </nuxt-link>
         <div class="flex-center">
           <NavList type="row" is-upper-case :nav-link="linkList" class="mr-12"/>
         </div>
+        <AppSearch />
       </header>
     </v-container>
-    <BaseDivider />
   </v-container>
 </template>
 
@@ -18,18 +20,14 @@ export default {
   components: {
     Logo: () => import('./logo'),
     NavList: () => import('./nav-list'),
-    BaseDivider: () => import('./ui/BaseDivider'),
+    AppSearch: () => import('./common/AppSearch'),
   },
   data() {
     return {
       linkList: [
         {
-          title: 'Home page',
+          title: 'All movies',
           to: '/'
-        },
-        {
-          title: 'My movies',
-          to: '/my_movies'
         },
       ]
     }
@@ -37,6 +35,9 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.header {
+  border-bottom: 1px solid white;
+  box-shadow: inset #000000 0 0 20px 3px;
+}
 </style>

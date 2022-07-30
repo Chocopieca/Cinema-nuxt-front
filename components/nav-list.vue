@@ -70,7 +70,7 @@ export default {
     text-align: center;
 
     &:hover {
-      color: #FFFFFF80;
+      color: #c18a2c;
     }
 
     &:nth-last-child(1) {
