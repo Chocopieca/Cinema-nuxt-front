@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import moment from "moment";
 
 Vue.mixin({
   methods: {
@@ -27,5 +28,8 @@ Vue.mixin({
         },
       });
     },
+    todayDate() {
+      return moment().format("YYYY-MM-DD");
+    }
   },
 });
