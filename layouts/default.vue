@@ -2,7 +2,11 @@
   <v-app class="wrapper">
     <AppHeader />
     <Nuxt />
+    <AppGenreBlock />
     <AppFooter />
+    <client-only>
+      <IndexModal />
+    </client-only>
   </v-app>
 </template>
 
@@ -12,6 +16,8 @@ export default {
   components: {
     AppHeader: () => import('../components/app-header'),
     AppFooter: () => import('../components/app-footer'),
+    AppGenreBlock: () => import('../components/common/AppGenreBlock'),
+    IndexModal: () => import('../components/modal/index-modal'),
   },
   async serverPrefetch({ $store }) {
     try {
@@ -22,12 +28,6 @@ export default {
   }
 }
 </script>
-<style module>
-.test {
-  background: black;
-}
-</style>
-
 <style scoped lang="scss">
 .wrapper {
   display: flex;
