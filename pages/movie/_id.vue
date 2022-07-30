@@ -1,8 +1,8 @@
 <template>
   <v-container fluid>
-    <v-container class="movie-card">
+    <v-container class="movie-card pa-10">
       <v-row>
-        <v-col cols="12" md="6">
+        <v-col cols="12" md="6" lg="4">
           <v-img
             :lazy-src="$img(currentMovie.image, {
               quality: 20,
@@ -14,14 +14,21 @@
             })"
             contain
             max-height="550"
-            class="cursor-pointer"
+            class="movie-card-img mb-5"
           />
+          <BaseButton button-color="border" @click="setOrder">WATCH</BaseButton>
         </v-col>
-        <v-col cols="12" md="6">
-          <h1>{{ currentMovie.name }}</h1>
-          <div>{{ currentMovie.genre }}</div>
-          <div>{{ currentMovie.description }}</div>
-          <div v-html="currentMovie.additional"></div>
+        <v-col cols="12" md="6" lg="8">
+          <h1 :class="getFontSize($breakpoints.width, 700, [32, 32, 32, 32, 32])" class="main-brown-text">
+            {{ currentMovie.name }}
+          </h1>
+          <BaseButton
+            button-color="chips"
+            button-size="chip"
+            @click="searchMovieByGenre(currentMovie.genre)"
+          >{{ getGenreNameById }}</BaseButton>
+          <div class="movie-card-description">{{ currentMovie.description }}</div>
+          <div class="movie-card-feature" v-html="currentMovie.additional"></div>
         </v-col>
       </v-row>
     </v-container>
@@ -29,10 +36,13 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: "MoviePage",
+  components: {
+    BaseButton: () => import('~~/components/ui/BaseButton')
+  },
   data() {
     return {
       movieId: this.$route.params.id,
@@ -40,18 +50,66 @@ export default {
   },
   computed: {
     ...mapGetters({
-      movies: 'movies/getAllMovies',
+      movieList: 'movies/getAllMovies',
+      genreList: 'movies/getGenreList',
     }),
     currentMovie() {
-      return this.movies.find(item => item.id === +this.movieId);
-    }
+      return this.movieList.find(item => item.id === +this.movieId);
+    },
+    getGenreNameById() {
+      return this.genreList[this.currentMovie.genre];
+    },
   },
+  methods: {
+    ...mapActions({
+      openDialog: 'modal/showModal',
+    }),
+    async searchMovieByGenre(id) {
+      await this.$router.push(`/genre/${id}`)
+    },
+    setOrder() {
+      const payload = {
+        type: 'OrderModal',
+        options: {
+          movie: this.currentMovie,
+        }
+      }
+      this.openDialog(payload)
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
 ::v-deep.movie-card {
   background: #373737;
+  box-shadow: inset #000000 0 0 20px 3px;
   border: 2px solid white;
+
+  button {
+    max-width: 100%;
+  }
+
+  &-description {
+    margin-bottom: 20px;
+  }
+
+  &-feature ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid black;
+      padding: 8px;
+      background: linear-gradient(280deg,  #c18a2c30, transparent );
+
+      p {
+        margin: 0;
+      }
+    }
+  }
 }
 </style>
