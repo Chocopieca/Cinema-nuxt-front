@@ -29,7 +29,7 @@ export default {
     return {
       linkList: [
         {
-          title: 'Home page',
+          title: 'All movies',
           to: '/'
         },
       ]
