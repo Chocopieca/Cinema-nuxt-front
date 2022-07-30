@@ -1,7 +1,7 @@
 import ApiService from './api'
 
 export default class BookService extends ApiService {
-  checkPlace(id, daytime, showdate) {
+  getPlaces(id, daytime, showdate) {
     return this.axios.$get(`/showPlaces?movie_id=${id}&daytime=${daytime}&showdate=${showdate}`)
   }
 
