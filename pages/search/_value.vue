@@ -1,16 +1,16 @@
 <template>
   <v-container fluid>
-    <v-container class="search">
+    <v-container class="search px-0">
       <div class="search-title mb-6 px-10">
-        <h1 :class="getFontSize($breakpoints.width, 700, [48, 48, 48, 48, 48])" class="mb-10 text-uppercase main-brown-text">
-          SEARCHING MOVIES WITH {{ searchValue.toUpperCase() }}
+        <h1 :class="getFontSize($breakpoints.width, 700, [48, 48, 48, 38, 38])" class="mb-10 text-uppercase main-brown-text">
+          YOU ARE SEARCHING FOR {{ searchValue.toUpperCase() }}
         </h1>
-        <div :class="getFontSize($breakpoints.width, 400, [32, 32, 32, 32, 32])" class="mb-15">
+        <div :class="getFontSize($breakpoints.width, 400, [32, 32, 32, 24, 24])" class="mb-15">
           <div v-show="searchResult?.length">
-            We fined {{ searchResult?.length }} movies for you !
+            We've picked {{ searchResult?.length }} movies for you!
           </div>
           <div v-show="!searchResult?.length">
-            Movies don't find
+            Movies not found
           </div>
         </div>
       </div>

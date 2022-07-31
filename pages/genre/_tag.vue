@@ -1,12 +1,12 @@
 <template>
   <v-container fluid>
-    <v-container class="movies">
+    <v-container class="movies px-0">
       <div class="movies-title mb-6 px-10">
-        <h1 :class="getFontSize($breakpoints.width, 700, [48, 48, 48, 48, 48])" class="mb-10 text-uppercase main-brown-text">
-          SEARCHING MOVIES WITH {{ genreName }} GENRE
+        <h1 :class="getFontSize($breakpoints.width, 700, [48, 48, 48, 38, 38])" class="mb-10 text-uppercase main-brown-text">
+          SEARCH FOR {{ genreName }} MOVIES
         </h1>
-        <div :class="getFontSize($breakpoints.width, 400, [32, 32, 32, 32, 32])" class="mb-15">
-          We fined {{ searchResult?.length }} movies for you !
+        <div :class="getFontSize($breakpoints.width, 400, [32, 32, 32, 24, 24])" class="mb-15">
+          We've picked {{ searchResult?.length }} movies for you!
         </div>
       </div>
       <v-row>

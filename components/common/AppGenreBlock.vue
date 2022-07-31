@@ -2,10 +2,10 @@
   <v-container fluid>
     <v-container class="genre pa-0">
       <div class="genre-title px-10">
-        <h1 :class="getFontSize($breakpoints.width, 700, [48, 48, 48, 48, 48])" class="mb-10 text-uppercase main-brown-text">
+        <h1 :class="getFontSize($breakpoints.width, 700, [48, 48, 48, 38, 38])" class="mb-10 text-uppercase main-brown-text">
           ALL GENRES
         </h1>
-        <div :class="getFontSize($breakpoints.width, 400, [32, 32, 32, 32, 32])" class="mb-15">
+        <div :class="getFontSize($breakpoints.width, 400, [32, 32, 32, 24, 24])" class="mb-15">
           You can find movies by genre.
         </div>
         <v-row class="mb-10">
@@ -21,7 +21,7 @@
                   format: 'webp'
                 })"
                 cover
-                width="200"
+                width="100%"
                 height="300"
                 class="cursor-pointer position-relative"
               >

@@ -1,9 +1,6 @@
 <template>
   <div class="overlay" @click="close">
-    <div
-      class="modal-form"
-      @click.stop=""
-    >
+    <div class="modal-form" @click.stop="">
       <v-img
         :src="require('../../assets/icons/cross-inline-icon.svg')"
         contain
@@ -49,6 +46,7 @@ export default {
   z-index: 5;
   background: #00000040;
   padding-top: 25px;
+  overflow: scroll;
 }
 
 .modal-form {

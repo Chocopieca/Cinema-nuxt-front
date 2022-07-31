@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-container class="movie-card pa-10">
+    <v-container class="movie-card pa-5 pa-md-10">
       <v-row>
         <v-col cols="12" md="6" lg="4">
           <v-img
@@ -99,15 +99,18 @@ export default {
     padding: 0;
 
     li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: linear-gradient(280deg,  #c18a2c30, transparent );
       border: 1px solid black;
       padding: 8px;
-      background: linear-gradient(280deg,  #c18a2c30, transparent );
 
-      p {
-        margin: 0;
+      @media (min-width: 960px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          margin: 0;
+        }
       }
     }
   }

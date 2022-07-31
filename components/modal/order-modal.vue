@@ -14,7 +14,7 @@
             })"
             contain
             max-height="550"
-            class="movie-card-img mb-5 cursor-pointer"
+            class="mb-5 cursor-pointer"
           />
         </div>
         <BaseButton

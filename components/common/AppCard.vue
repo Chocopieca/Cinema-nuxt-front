@@ -10,12 +10,11 @@
         format: 'webp'
       })"
       contain
-      height="230"
-      class="cursor-pointer"
+      class="movie-card-image cursor-pointer mb-5"
       @click="$router.push(`/movie/${item.id}`)"
     />
     <h3
-      :class="getFontSize($breakpoints.width, 700, [16, 16, 16, 16, 16])"
+      :class="getFontSize($breakpoints.width, 700, [16, 16, 16, 24, 24])"
       class="text-center mb-3 cursor-pointer"
       @click="$router.push(`/movie/${item.id}`)"
     >{{ item.name }}</h3>
@@ -59,7 +58,12 @@ export default {
   background: #4d4d4d;
   border: 1px solid white;
   box-shadow: inset #000000 0 0 20px 3px;
-  height: 414px;
+
+  &-image {
+    @media (min-width: 920px) {
+      max-height: 225px;
+    }
+  }
 
   h3 {
     height: 60px;

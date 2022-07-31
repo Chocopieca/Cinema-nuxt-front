@@ -2,12 +2,14 @@
   <v-container fluid>
     <v-container class="pa-0">
       <div class="booking-title mb-6 px-10">
-        <h1 :class="getFontSize($breakpoints.width, 700, [48, 48, 48, 48, 48])" class="main-brown-text mb-10">
-          ALL BOOKING MOVIES
+        <h1 :class="getFontSize($breakpoints.width, 700, [48, 48, 48, 38, 38])" class="main-brown-text mb-10">
+          FILMS BOOKED
         </h1>
-        <div :class="getFontSize($breakpoints.width, 400, [32, 32, 32, 32, 32])" class="mb-15">
-          <div v-show="bookMovies.length">{{ bookMovies.length }} movies you booked in our cinema.</div>
-          <div v-show="!bookMovies.length">You didn't book any movie yet.</div>
+        <div :class="getFontSize($breakpoints.width, 400, [32, 32, 32, 24, 24])" class="mb-15">
+          <div v-show="bookMovies.length">
+            The {{ bookMovies.length }} {{ bookMovies.length === 1 ? "movie" : 'movies'}} you have booked in our theater.
+          </div>
+          <div v-show="!bookMovies.length">You haven't booked any movies yet.</div>
         </div>
       </div>
       <v-row no-gutters>

@@ -1,7 +1,7 @@
 <template>
   <div class="booked-movie">
     <v-row>
-      <v-col cols="2">
+      <v-col md="2">
         <v-img
           :lazy-src="$img(getMovie.image, {
             quality: 20,
@@ -12,15 +12,13 @@
             format: 'webp'
           })"
           contain
-          max-height="150"
-          max-width="200"
           class="cursor-pointer"
           @click="$router.push(`/movie/${getMovie.id}`)"
         />
       </v-col>
       <v-col class="d-flex justify-center flex-column">
         <div class="mb-2">
-          <span class="text-uppercase main-brown-text">Movie name:</span>
+          <span class="text-uppercase main-brown-text d-block d-md-inline-block">Movie name:</span>
           {{ getMovie.name }}
         </div>
         <div>
@@ -32,14 +30,14 @@
         </div>
       </v-col>
       <v-col class="d-flex justify-center flex-column">
-        <div>
-          <span class="text-uppercase main-brown-text">BOOKING TIME:</span>
+        <div class="mb-3">
+          <span class="text-uppercase main-brown-text d-block d-md-inline-block">BOOKING TIME:</span>
           {{ bookedMovie.showdate }} at {{ bookedMovie.daytime }}
         </div>
-        <div class="text-uppercase"><span class="main-brown-text">Your row:</span> {{ bookedMovie.row }}</div>
-        <div class="text-uppercase"><span class="main-brown-text">Your seat:</span> {{ bookedMovie.seat }}</div>
-        <div>
-          <span class="text-uppercase main-brown-text">Your ticketkey:</span>
+        <div class="text-uppercase mb-3"><span class="main-brown-text">Your row:</span> {{ bookedMovie.row }}</div>
+        <div class="text-uppercase mb-3"><span class="main-brown-text">Your seat:</span> {{ bookedMovie.seat }}</div>
+        <div class="mb-3">
+          <span class="text-uppercase main-brown-text d-block d-md-inline-block">Your ticketkey:</span>
           {{ bookedMovie.ticketkey }}
         </div>
       </v-col>
