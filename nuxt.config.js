@@ -1,5 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  target: 'static',
   head: {
     titleTemplate: '%s - Cinema-nuxt-front',
     title: 'Cinema-nuxt-front',
