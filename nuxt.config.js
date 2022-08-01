@@ -103,6 +103,10 @@ export default {
   build: {
   },
 
+  router: {
+    base: '/Cinema-nuxt-front/',
+  },
+
   loading: {
     color: '#c18a2c',
     height: '5px',
