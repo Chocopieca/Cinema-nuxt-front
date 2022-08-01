@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import {mapActions} from "vuex";
+
 export default {
   name: 'DefaultLayout',
   components: {
@@ -21,13 +23,18 @@ export default {
     IndexModal: () => import('../components/modal/index-modal'),
     BaseButtonUp: () => import('../components/ui/BaseButtonUp'),
   },
-  async serverPrefetch({ $store }) {
+  async created() {
     try {
-      await $store.dispatch('movies/getAllMovies');
+      await this.getAllMovies();
     } catch (e) {
       console.log('Error ', e)
     }
-  }
+  },
+  methods: {
+    ...mapActions({
+      getAllMovies: 'movies/getAllMovies',
+    }),
+  },
 }
 </script>
 <style scoped lang="scss">
