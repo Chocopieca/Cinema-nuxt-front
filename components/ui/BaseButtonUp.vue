@@ -1,17 +1,17 @@
 <template>
-  <v-fab-transition>
+  <v-fab-transition transition="scale-transition">
     <v-btn
-        key="mdi-chevron-up"
-        color="#FC1531"
-        fab
-        dark
-        bottom
-        right
-        class="button-up"
-        @click="$vuetify.goTo(0, {
-          duration: 500,
-          easing: 'easeInOutCubic',
-        })"
+      key="mdi-chevron-up"
+      color="#c18a2c"
+      fab
+      dark
+      bottom
+      right
+      class="button-up"
+      @click="$vuetify.goTo(0, {
+        duration: 500,
+        easing: 'easeInOutCubic',
+      })"
     >
       <v-icon>mdi-chevron-up</v-icon>
     </v-btn>
@@ -21,7 +21,6 @@
 <script>
 export default {
   name: "BaseButtonUp",
-
 }
 </script>
 

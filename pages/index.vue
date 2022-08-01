@@ -6,11 +6,18 @@
           ALL MOVIES
         </h1>
         <div :class="getFontSize($breakpoints.width, 400, [32, 32, 32, 24, 24])" class="mb-15">
-          {{ movies.length }} movies you can watch in our cinema.
+          {{ movies?.length }} movies you can watch in our cinema.
         </div>
       </div>
       <v-row>
-        <v-col v-for="item of movies" :key="item.id" cols="12" md="4" lg="2" class="mb-4">
+        <v-col
+          v-for="item of movies"
+          :key="item.id"
+          cols="12"
+          md="4"
+          lg="2"
+          class="mb-4"
+        >
           <AppCard :item="item"/>
         </v-col>
       </v-row>

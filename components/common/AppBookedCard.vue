@@ -65,7 +65,7 @@ export default {
       genreList: 'movies/getGenreList',
     }),
     getMovie() {
-      return this.movieList.find(item => +item.id === +this.bookedMovie.movie_id);
+      return this.movieList?.find(item => +item.id === +this.bookedMovie.movie_id) ?? {};
     },
     getGenreNameById() {
       return this.genreList[this.getMovie.genre];

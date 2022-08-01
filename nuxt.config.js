@@ -76,6 +76,7 @@ export default {
   },
 
   image: {
+    domains: ['chocopieca.github.io', 'localhost'],
     dir: 'assets'
   },
 

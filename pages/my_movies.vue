@@ -6,10 +6,10 @@
           FILMS BOOKED
         </h1>
         <div :class="getFontSize($breakpoints.width, 400, [32, 32, 32, 24, 24])" class="mb-15">
-          <div v-show="bookMovies.length">
-            The {{ bookMovies.length }} {{ bookMovies.length === 1 ? "movie" : 'movies'}} you have booked in our theater.
+          <div v-show="bookMovies?.length">
+            The {{ bookMovies?.length }} {{ bookMovies.length === 1 ? "movie" : 'movies'}} you have booked in our theater.
           </div>
-          <div v-show="!bookMovies.length">You haven't booked any movies yet.</div>
+          <div v-show="!bookMovies?.length">You haven't booked any movies yet.</div>
         </div>
       </div>
       <v-row no-gutters>
