@@ -2,6 +2,9 @@ import Vue from 'vue';
 import moment from "moment";
 
 Vue.mixin({
+  mounted() {
+    this.goToTop()
+  },
   methods: {
     getFontSize(displayWidth, weight, sizes) {
       if(sizes.length === 5) {
@@ -30,6 +33,9 @@ Vue.mixin({
     },
     todayDate() {
       return moment().format("YYYY-MM-DD");
+    },
+    goToTop() {
+      document.querySelector('.wrapper').scrollIntoView({behavior: 'smooth'})
     }
-  },
+  }
 });

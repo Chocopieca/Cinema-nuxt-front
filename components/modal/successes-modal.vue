@@ -9,14 +9,7 @@
         <v-row class="booked-movie">
           <v-col md="6">
             <v-img
-              :lazy-src="$img(bookedMovieItem.image, {
-                quality: 20,
-                format: 'webp'
-              })"
-              :src="$img(bookedMovieItem.image, {
-                quality: 100,
-                format: 'webp'
-              })"
+              :src="bookedMovieItem.image"
               contain
               max-height="300"
               class="mb-5"

@@ -1,14 +1,7 @@
 <template>
   <div class="movie-card pa-5">
     <v-img
-      :lazy-src="$img(item.image, {
-        quality: 20,
-        format: 'webp'
-      })"
-      :src="$img(item.image, {
-        quality: 100,
-        format: 'webp'
-      })"
+      :src="item.image"
       contain
       class="movie-card-image cursor-pointer mb-5"
       @click="$router.push(`/movie/${item.id}`)"

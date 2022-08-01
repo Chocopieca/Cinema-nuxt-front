@@ -3,14 +3,7 @@
     <v-row>
       <v-col md="2">
         <v-img
-          :lazy-src="$img(getMovie.image, {
-            quality: 20,
-            format: 'webp'
-          })"
-          :src="$img(getMovie.image, {
-            quality: 100,
-            format: 'webp'
-          })"
+          :src="getMovie.image"
           contain
           class="cursor-pointer"
           @click="$router.push(`/movie/${getMovie.id}`)"

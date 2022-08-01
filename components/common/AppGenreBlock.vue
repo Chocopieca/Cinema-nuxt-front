@@ -12,14 +12,7 @@
           <v-col v-for="item of GenreList" :key="item.id" cols="12" md="4" lg="2">
             <nuxt-link :to="`/genre/${item.nameId}`">
               <v-img
-                :lazy-src="$img(item.image, {
-                  quality: 20,
-                  format: 'webp'
-                })"
-                :src="$img(item.image, {
-                  quality: 100,
-                  format: 'webp'
-                })"
+                :src="item.image"
                 cover
                 width="100%"
                 height="300"

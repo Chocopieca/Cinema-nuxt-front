@@ -14,10 +14,10 @@
         >
           <template #prepend-inner>
             <v-img
-                :src="getFlagLink"
-                contain
-                width="30"
-                height="25"
+              :src="getFlagLink"
+              contain
+              width="30"
+              height="25"
             />
           </template>
         </v-autocomplete>

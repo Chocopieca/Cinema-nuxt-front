@@ -2,14 +2,7 @@
   <VueSlickCarousel v-show="$vuetify.breakpoint.mdAndDown" v-bind="setting">
     <div v-for="item of itemList" :key="item.id">
       <v-img
-        :lazy-src="$img(item.img, {
-          quality: 20,
-          format: 'webp'
-        })"
-        :src="$img(item.img, {
-          quality: 100,
-          format: 'webp'
-        })"
+        :src="require(item.img)"
         contain
         max-width="356"
         max-height="306"

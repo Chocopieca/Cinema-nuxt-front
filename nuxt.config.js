@@ -20,8 +20,6 @@ export default {
     ]
   },
 
-  assetPrefix: '/Cinema-nuxt-front/',
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     { src: '@/assets/scss/styles.scss', lang: 'scss' },
@@ -60,7 +58,6 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxt/image',
     'nuxt-breakpoints',
     'nuxt-ssr-cache',
   ],
@@ -77,10 +74,6 @@ export default {
     },
   },
 
-  image: {
-    domains: ['chocopieca.github.io', 'localhost'],
-    dir: 'assets'
-  },
 
   breakpoints: {
     // default options

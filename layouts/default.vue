@@ -7,6 +7,7 @@
     <client-only>
       <IndexModal />
     </client-only>
+    <BaseButtonUp />
   </v-app>
 </template>
 
@@ -18,6 +19,7 @@ export default {
     AppFooter: () => import('../components/app-footer'),
     AppGenreBlock: () => import('../components/common/AppGenreBlock'),
     IndexModal: () => import('../components/modal/index-modal'),
+    BaseButtonUp: () => import('../components/ui/BaseButtonUp'),
   },
   async serverPrefetch({ $store }) {
     try {

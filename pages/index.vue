@@ -36,7 +36,7 @@ export default {
     ...mapGetters({
       movies: 'movies/getAllMovies',
     })
-  }
+  },
 }
 </script>
 

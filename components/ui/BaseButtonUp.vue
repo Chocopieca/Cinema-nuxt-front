@@ -8,10 +8,7 @@
       bottom
       right
       class="button-up"
-      @click="$vuetify.goTo(0, {
-        duration: 500,
-        easing: 'easeInOutCubic',
-      })"
+      @click="goTo"
     >
       <v-icon>mdi-chevron-up</v-icon>
     </v-btn>
@@ -21,6 +18,11 @@
 <script>
 export default {
   name: "BaseButtonUp",
+  methods: {
+    goTo() {
+      document.querySelector('.wrapper').scrollIntoView({behavior: 'smooth'})
+    }
+  }
 }
 </script>
 

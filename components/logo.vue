@@ -1,17 +1,6 @@
 <template>
   <v-img
-    :src="$img(src, {
-      height: getSize.height,
-      width: getSize.width,
-      quality: 100,
-      format: 'webp'
-    })"
-    :lazy-src="$img(src, {
-      height: getSize.height,
-      width: getSize.width,
-      quality: 20,
-      format: 'webp'
-    })"
+    :src="src"
     contain
     :max-width="getSize.width"
     :max-height="getSize.height"

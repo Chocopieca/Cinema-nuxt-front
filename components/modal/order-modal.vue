@@ -4,14 +4,7 @@
       <v-col cols="12" md="6" lg="4">
         <div @click="goTo(`/movie/${movieItem.id}`)">
           <v-img
-            :lazy-src="$img(movieItem.image, {
-              quality: 20,
-              format: 'webp'
-            })"
-            :src="$img(movieItem.image, {
-              quality: 100,
-              format: 'webp'
-            })"
+            :src="movieItem.image"
             contain
             max-height="550"
             class="mb-5 cursor-pointer"

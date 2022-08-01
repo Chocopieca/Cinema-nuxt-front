@@ -4,14 +4,7 @@
       <v-row>
         <v-col cols="12" md="6" lg="4">
           <v-img
-            :lazy-src="$img(currentMovie.image, {
-              quality: 20,
-              format: 'webp'
-            })"
-            :src="$img(currentMovie.image, {
-              quality: 100,
-              format: 'webp'
-            })"
+            :src="currentMovie.image"
             contain
             max-height="550"
             class="movie-card-img mb-5"
