@@ -20,6 +20,8 @@ export default {
     ]
   },
 
+  assetPrefix: '/Cinema-nuxt-front/',
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     { src: '@/assets/scss/styles.scss', lang: 'scss' },
