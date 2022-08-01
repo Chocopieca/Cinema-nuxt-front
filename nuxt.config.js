@@ -90,7 +90,10 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: process.env.MOVIE_API_URL,
+    baseURL: 'https://cinema-api-test.y-media.io/v1',
+    common: {
+      'Access-Control-Allow-Origin': '*'
+    },
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
