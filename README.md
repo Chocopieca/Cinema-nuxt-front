@@ -1,4 +1,6 @@
 # Cinema-nuxt-front
+Site link: [https://chocopieca.github.io/Cinema-nuxt-front/](https://chocopieca.github.io/Cinema-nuxt-front/)
+This is a pet project for Cinema Explorer. It uses NuxtJs 2v. There is set up TaviceCi.
 
 ## Build Setup
 
